@@ -1,0 +1,37 @@
+
+Inicio
+
+	EscrevaL("Informe seu nome:")
+	Leia(Nome)
+	EscrevaL("Informe seu endereço:")
+	Leia(Endereco)
+	EscrevaL("Informe sua cidade:")
+	Leia(Cidade)
+	EscrevaL("Informe seu CPF:")
+	Leia(CPF)
+	EscrevaL("Informe seu RG:")
+	Leia(RG)
+	EscrevaL("Informe sua idade:")
+	Leia(Idade)
+	EscrevaL("Informe o nome do seu pai:")
+	Leia(NomeDoPai)
+	EscrevaL("Informe o nome da sua mãe:")
+	Leia(NomeDaMae)
+	EscrevaL("Informe seu peso:")
+	Leia(Peso)
+	EscrevaL("Informe sua renda bruta:")
+	Leia(RendaBruta)
+    
+   LimpaTela
+	EscrevaL("Nome:", nome)
+	EscrevaL("Endereço:", Endereco)
+	EscrevaL("Cidade:", Cidade)
+	EscrevaL("CPF:", CPF)
+	EscrevaL("RG:", RG)
+	EscrevaL("Idade:", Idade)
+	EscrevaL("Pai:", NomeDoPai)
+	EscrevaL("Mãe:", NomeDaMae)
+	EscrevaL("Peso:", Peso)
+	EscrevaL("Renda Bruta:", RendaBruta)
+
+	

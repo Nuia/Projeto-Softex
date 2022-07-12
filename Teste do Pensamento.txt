@@ -1,0 +1,185 @@
+Elabore um algoritmo que possa descobrir, através de perguntas e respostas, qual meio de transporte o usuário está pensando.
+O usuário deverá escolher uma das seguintes opções:
+
+- Trator
+- Moto
+- Bicicleta
+- Trem
+- Carro
+- Caminhão
+- Ônibus
+- Paraquedas
+- Balão
+- Avião
+- Helicóptero
+- Submarino
+- Barco
+- Navio
+- Lancha
+
+Para chegar ao resultado, só devem ser usadas perguntas que retornem "Sim" ou "Não".
+
+Exemplo:
+É terrestre? Sim.
+Cabe apenas uma pessoa? Sim.
+É pesado? Não.
+Tem pedal? Sim.
+Então, o transporte escolhido foi a bicicleta.
+
+Para chegar ao resultado de cada uma das opções, use o modelo ilustrado na imagem em anexo.
+
+--------------------------------******************************--------------------------------------
+RESPOSTA!!
+	Fiz esse algoritimo no visualgV25.
+
+algoritmo "Teste do pensamento"
+
+var
+    R:caracter
+inicio
+
+      EscrevaL("--- ** ------------------- ** --- ")
+      EscrevaL("------ Teste do Pensamento ------ ")
+      EscrevaL("--- ** ------------------- ** --- ")
+      EscrevaL("Vamos descobrir qual meio de transporte você escolheu? ")
+      EscrevaL("Responda com [S] para sim ou [N] para não. ")
+      EscrevaL()
+      EscrevaL("Ele é terrestre?")
+      Leia(R)
+      Se(R = "S")entao
+           EscrevaL("Cabe apenas uma pessoa? ")
+           Leia(R)
+           Se(R = "S")entao
+                EscrevaL("É pesado?")
+                Leia(R)
+                Se(R = "S")entao
+                     EscrevaL("Você pensou no Trator!")
+                SeNao
+                     EscrevaL("Tem pedal?")
+                     Leia(R)
+                     Se(R = "S")entao
+                          EscrevaL("Você pensou na Bicicleta!")
+                     FimSe
+                FimSe
+           SeNao
+                EscrevaL("Usa capacete?")
+                Leia(R)
+                Se(R = "S")entao
+                     EscrevaL("Você pensou na Moto")
+                SeNao
+                     EscrevaL("Tem passageiro?")
+                     Leia(R)
+                     Se(R = "S")entao
+                          EscrevaL("Usa trilho?")
+                          Leia(R)
+                          Se(R = "S")entao
+                               EscrevaL("Você pensou em Trem!")
+                          SeNao
+                               EscrevaL("Anda na pista? ")
+                               Leia(R)
+                               Se(R = "S")entao
+                                    EscrevaL("É alto? ")
+                                    Leia(R)
+                                    Se(R = "S")entao
+                                         EscrevaL("Usa carroceria?")
+                                         Leia(R)
+                                         Se(R = "S")entao
+                                              EscrevaL("Você pensou em Caminhão!")
+                                         SeNao
+                                              EscrevaL("Pode ter cobrador?")
+                                              Leia(R)
+                                              Se(R = "S")entao
+                                                   EscrevaL("Você pensou em Ônibus!")
+                                              FimSe
+                                         FimSe
+                                    SeNao
+                                         EscrevaL("É veículo leve?")
+                                         Leia(R)
+                                         Se(R = "S")entao
+                                              EscrevaL("Você pensou em Carro! ")
+                                         FimSe
+                                    FimSe
+                               FimSe
+                          FimSe
+                     FimSe
+                Fimse
+           FimSe
+      FimSe
+      Se(R = "N")entao
+           EscrevaL("É aéreo? ")
+           Leia(R)
+           Se(R = "S")entao
+                EscrevaL("Precisa pular?")
+                Leia(R)
+                Se(R = "S")entao
+                     EscrevaL("Você pensou em Asa Delta!")
+                Senao
+                     EscrevaL("Viaja dentro? ")
+                     Leia(R)
+                     Se(R = "S")entao
+                          EscrevaL("É devagar?")
+                          Leia(R)
+                          Se(R = "S")entao
+                               EscrevaL("Você pensou em Balão! ")
+                          SeNao
+                               EscrevaL("Tem piloto? ")
+                               Leia(R)
+                               Se(R = "S")entao
+                                    EscrevaL("Possui asas fixas? ")
+                                    Leia(R)
+                                    Se(R = "S")entao
+                                         EscrevaL("Você pensou em Avião! ")
+                                    Senao
+                                         EscrevaL("Faz voo vertical? ")
+                                         Leia(R)
+                                         Se(R = "S")entao
+                                              EscrevaL("Você pensou em Helicóptero")
+                                         FimSe
+                                    FimSe
+                               FimSe
+                          FimSe
+                     FimSe
+                FimSe
+           SeNao
+                EscrevaL("É aquático?")
+                Leia(R)
+                Se(R = "S")entao
+                     EscrevaL("É coberto d'água? ")
+                     Leia(R)
+                     Se(R = "S")entao
+                          EscrevaL("Você pensou em Submarino! ")
+                     SeNao
+                          EscrevaL("Navega na água? ")
+                          Leia(R)
+                          Se(R = "S")entao
+                               EscrevaL("Possui vela? ")
+                               Leia(R)
+                               Se(R = "S")entao
+                                    EscrevaL("Você pensou em Barco! ")
+                               SeNao
+                                    EscrevaL("Tem motor? ")
+                                    Leia(R)
+                                    Se(R = "S")entao
+                                         EscrevaL("É alto? ")
+                                         Leia(R)
+                                         Se(R = "S")entao
+                                              EscrevaL("Você pensou no Navio ")
+                                         Senao
+                                              EscrevaL("Pode ser descoberto? ")
+                                              Leia(R)
+                                              Se(R = "S")entao
+                                                   EscrevaL("Você pensou na Lancha! ")
+                                              FimSe
+                                         FimSe
+                                    FimSe
+                               FimSe
+                          FimSe
+                     FimSe
+                FimSe
+           FimSe
+      FimSe
+
+
+    
+fimalgoritmo
+

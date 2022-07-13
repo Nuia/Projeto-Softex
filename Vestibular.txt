@@ -1,0 +1,134 @@
+Após uma prova de vestibular, uma escola quer identificar quantos dos seus alunos foram aprovados em cada turma de formandos. Ela quer saber qual aluno teve a maior nota e de qual turma ele é. Nessa escola, há quatro turmas (A, B, C e D) com vinte e cinco alunos cada.
+
+Elabore um algoritmo que solicite o nome e a nota do vestibular aos alunos. Depois, informe quantos deles foram aprovados, de que turma são, qual a maior nota em cada turma e qual aluno teve a maior nota de todas.
+
+Para que o aluno seja aprovado no vestibular, ele deverá obter nota maior ou igual a 7.
+
+
+
+
+
+
+-----------------------------------*********** RESPOSTA***************--------------------------------
+Fiz no  VisualG
+algoritmo "Vestibular"
+
+var
+   A,B,C,D, AP, Cn:Real
+   MA, MB, MC, MD:Real
+   Aluno:Caracter
+   AprovA, AprovB, AprovC, AprovD:Inteiro
+   MaiorN:Real
+
+
+inicio
+  A<-1
+  B<-1
+  C<-1
+  D<-1
+  MA<-0
+  MB<-0
+  MC<-0
+  MD<-0
+  AP<-0
+  MaiorN<-0
+  AprovA<-0
+  AprovB<-0
+  AprovC<-0
+  AprovD<-0
+      Enquanto A <= 25 faca
+        Escreval("Informe o nome do ", A,"º aluno da turma A: ")
+        Leia(Aluno)
+        Escreval("Informe a nota desse aluno: ")
+        Leia(Cn)
+        Se(Cn >= 7)entao
+        AP <- AP+1
+        FimSe
+        Se(Cn >= 7)entao
+        AprovA <- AprovA+1
+        FimSe
+        Se(Cn > MA)entao
+        Ma<-Cn
+        FimSe
+        Se(Cn > MaiorN)entao
+        MaiorN <- Cn
+        FimSe
+        A <- A+1
+      FimEnquanto
+
+      LimpaTela
+
+      Enquanto B <= 25 faca
+        Escreval("Informe o nome do ", B,"º aluno da turma B: ")
+        Leia(Aluno)
+        Escreval("Informe a nota desse aluno: ")
+        Leia(Cn)
+        Se(Cn >= 7)entao
+        AP <- AP+1
+        FimSe
+        Se(Cn >= 7)entao
+        AprovB <- AprovB+1
+        FimSe
+        Se(Cn > MB)entao
+        MB<-Cn
+        FimSe
+        Se(Cn > MaiorN)entao
+        MaiorN <- Cn
+        FimSe
+        B <- B+1
+      FimEnquanto
+
+      LimpaTela
+
+      Enquanto C <= 25 faca
+        Escreval("Informe o nome do ", C,"º aluno da turma C: ")
+        Leia(Aluno)
+        Escreval("Informe a nota desse aluno: ")
+        Leia(Cn)
+        Se(Cn >= 7)entao
+        AP <- AP+1
+        FimSe
+        Se(Cn >= 7)entao
+        AprovC <- AprovC+1
+        FimSe
+        Se(Cn > MC)entao
+        MC<-Cn
+        FimSe
+        Se(Cn > MaiorN)entao
+        MaiorN <- Cn
+        FimSe
+        C <- C+1
+      FimEnquanto
+
+      
+      LimpaTela
+
+      Enquanto D <= 25 faca
+        Escreval("Informe o nome do ", D,"º aluno da turma D: ")
+        Leia(Aluno)
+        Escreval("Informe a nota desse aluno: ")
+        Leia(Cn)
+        Se(Cn >= 7)entao
+        AP <- AP+1
+        FimSe
+        Se(Cn >= 7)entao
+        AprovD <- AprovD+1
+        FimSe
+        Se(Cn > MD)entao
+        MD<-Cn
+        FimSe
+        Se(Cn > MaiorN)entao
+        MaiorN <- Cn
+        FimSe
+        D <- D+1
+      FimEnquanto
+      LimpaTela
+      Escreval("Da turma A, foram aprovados ", AprovA, " Aluno(s) e a maior nota foi ", MA)
+      Escreval("Da turma B, foram aprovados ", AprovB, " Aluno(s) e a maior nota foi ", MB)
+      Escreval("Da turma C, foram aprovados ", AprovC, " Aluno(s) e a maior nota foi ", MC)
+      Escreval("Da turma D, foram aprovados ", AprovD, " Aluno(s) e a maior nota foi ", MD)
+      Escreval("A maior nota geral foi ", MaiorN)
+      
+        
+
+fimalgoritmo

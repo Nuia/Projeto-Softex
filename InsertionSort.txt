@@ -1,0 +1,52 @@
+Faça um algoritmo de ordenação utilizando o método insertion sort.
+Crie um método que execute as seguintes operações:
+
+- Tamanho do vetor: 30;
+- Utilize números ímpares;
+- Opere em ordem crescente.
+
+
+
+-------------------------******************RESPOSTA*********************--------------------------------
+
+
+algoritmo "InsertionSort"
+
+var
+   n, auxiliar, i, j: inteiro
+   insertion:vetor[0..29] de inteiro
+
+inicio
+
+      Para j <- 0 ate 29 faca
+         Repita
+           Escreval("Digite o", j, "º numero impar: ")
+           Leia(auxiliar)
+           Se auxiliar mod 2 = 0 entao
+              Escreval("Numero invalido, informe um numero IMPAR! ")
+           FimSe
+         Ate auxiliar mod 2 = 1
+             insertion[j]<- auxiliar
+      FimPara
+      Para j de 1 ate 29 faca
+      n <- insertion[j]
+      i <- j
+        Enquanto (insertion[i - 1] > n) e (i > 0) faca
+                 insertion[i] <- insertion[i - 1]
+                 i <- i - 1
+                 Se i = 0 entao
+                   Interrompa
+                 FimSe
+        FimEnquanto
+        insertion[i]<- n
+      FimPara
+      LimpaTela
+      Para j <- 0 ate 29 faca
+           EscrevaL(" - ",insertion[j], " - ")
+      FimPara
+
+
+
+
+
+fimalgoritmo

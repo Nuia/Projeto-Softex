@@ -1,0 +1,42 @@
+
+Desenvolva um programa que utiliza o nome de um aluno, duas notas e a quantidade de faltas que ele teve. Conclua se o aluno está aprovado ou reprovado de acordo com as especificações:
+
+- Se a média do aluno for menor que sete, o sistema deve informar o nome do aluno e que ele está reprovado;
+- Se o aluno possuir mais de três faltas, o sistema deve informar o nome do aluno e que ele está reprovado;
+- Se a média do aluno for maior ou igual a sete, o sistema deve informar o nome do aluno e que ele está aprovado.
+
+No sistema, todos os valores devem estar armazenados em variáveis.
+
+
+
+-------------------------------------***************Resposta***************---------------------------------------------
+
+algoritmo "Media de notas"
+
+var
+
+   falta:inteiro
+   nota1, nota2, media:real
+   aluno:caracter
+
+inicio
+
+Escreval("Informe o nome do aluno:")
+Leia(Aluno)
+Escreval("Informe a 1ª nota do aluno:")
+Leia(Nota1)
+Escreval("Informe a 2ª nota do aluno:")
+Leia(Nota2)
+Escreval("Informe quantas faltas o aluno teve:")
+Leia(Falta)
+
+Media<-((nota1 + nota2) / 2)
+   Se (Media >= 7) e (falta <= 3) entao
+      Escreval("Aluno(a) ", aluno, " foi APROVADO!")
+   senao
+        Escreval("Aluno(a) ", aluno, " foi REPROVADO!")
+   FimSe
+
+
+
+fimalgoritmo

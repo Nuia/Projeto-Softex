@@ -1,0 +1,57 @@
+Faça uma função calculadora de dois números com três parâmetros: os dois primeiros serão os números da operação e o terceiro será a entrada que definirá a operação a ser executada. Considera a seguinte definição:
+1. Soma
+2. Subtração
+3. Multiplicação
+4. Divisão
+
+Caso seja inserido um número de operação que não exista, o resultado deverá ser 0
+
+--------------------------------************Resposta*****************-----------------------------------------
+
+const ps = require('prompt-sync')
+const input = ps()
+
+let start = function(){
+    console.log('\n Qual operação deseja realizar?')
+    console.log('1 - soma / 2 - subtração / 3 - multiplicação / 4 - divisão')
+}
+
+let calculo = function(numero1, numero2, operacao){
+    if (operacao === 1) {
+        return numero1 + numero2        
+    }else if (operacao === 2){
+        return numero1 - numero2
+    }else if (operacao === 3){
+        return numero1 * numero2
+    }else if (operacao === 4){
+        return numero1 / numero2
+    }else{
+        return 0
+    } 
+}
+
+let restart = function(){
+    console.log(' \n Quer continuar?')
+    console.log('1 - sim / 2 - não')
+}
+
+while (true){
+    start()
+    let operacao = parseInt(input('Operação: '))
+    if (operacao != 5){
+        let numero1 = parseFloat(input('Informe o numero:'))
+        let numero2 = parseFloat(input('Informe o segundo valor:'))
+        console.log('Resultado: ', calculo(numero1, numero2, operacao))
+        restart()
+        operacao = parseInt(input('Operação: '))
+        if (operacao === 1){
+            continue        
+        }else {
+            console.log('exit')
+            break
+        }
+    }else {
+        console.log('exit')
+        break
+    }
+}

@@ -1,0 +1,47 @@
+
+Faça uma função calculadora que os números e as operações serão feitas pelo usuário. O código deve ficar rodando infinitamente até que o usuário escolha a opção de sair. No início, o programa mostrará a seguinte lista de operações:
+1: Soma
+2: Subtração
+3: Multiplicação
+4: Divisão
+0: Sair
+
+
+-----------------------------**************Resposta******************-------------------------------------
+
+const ps = require('prompt-sync')
+const input = ps()
+
+let start = function(){
+    console.log('\n Qual operação deseja realizar?')
+    console.log('\n 1 - soma \n 2 - subtração \n 3 - multiplicação \n 4 - divisão \n 5 - sair')
+}
+
+let calculo = function(numero1, numero2, operacao){
+    if (operacao === 1) {
+        return numero1 + numero2        
+    }else if (operacao === 2){
+        return numero1 - numero2
+    }else if (operacao === 3){
+        return numero1 * numero2
+    }else if (operacao === 4){
+        return numero1 / numero2
+    }else if (operacao === 5){
+        return console.log('Exit')                        
+    }
+}
+
+while (true){
+    start()
+    let operacao = parseInt(input('Operação: '))
+    if (operacao != 5){
+        let numero1 = parseFloat(input('Informe o numero:'))
+        let numero2 = parseFloat(input('Informe o segundo valor:'))
+        console.log('Resultado: ', calculo(numero1, numero2, operacao))       
+    }else if (operacao === 5){
+        console.log('Exit')
+        break
+    }else{
+        console.log('Essa opção não existe')        
+    }
+}

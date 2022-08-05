@@ -1,0 +1,43 @@
+const ps = require("prompt-sync")
+
+Desenvolva um programa que recebe do usuário nome completo e ano de nascimento que seja entre 1922 e 2021. A partir dessas informações, o sistema mostrará o nome do usuário e a idade que completou, ou completará, no ano atual (2022).
+
+Caso o usuário não digite um número ou apareça um inválido no campo do ano, o sistema informará o erro e continuará perguntando até que um valor correto seja preenchido.
+
+----------------------***************************RESPOSTA*************************--------------------------------
+
+
+const input = ps()
+
+let nome, anoNascimento, idade, resposta 
+while(true){
+    nome = input('Informe seu nome:')
+    while(true){
+        anoNascimento = input('Informe o ano de nascimento:')
+        if (!anoNascimento){
+            console.log('\n Voce não informou nada no campo de nascimento!')
+            continue
+        }else if (isNaN(anoNascimento)){
+            console.log('\n Só serão aceitos valores numericos!')
+            continue
+        }else{
+            anoNascimento = parseInt(anoNascimento)
+            if(anoNascimento < 1922 || anoNascimento > 2021){
+                console.log('\n Sua idade deve estar entre 1922 e 2021!')
+                continue
+            }else{
+                break
+            }
+        }
+    } 
+    idade = 2022 - anoNascimento
+    console.log(`${nome} possui ${idade} anos de idade!`)
+    console.log('\n Deseja calcular outra idade? \n 1 - Sim \n 2 - Não')
+    resposta = parseInt(input('Resposta: '))
+    if (resposta === 1){
+        continue
+    }else {
+    console.log('Saindo do programa.')
+    break
+    }
+}

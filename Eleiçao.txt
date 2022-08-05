@@ -1,0 +1,94 @@
+Desenvolva um código que simule uma eleição com três candidatos.
+- candidato_X => 889
+- candidato_Y => 847
+- candidato_Z => 515
+- branco => 0
+
+O código deve perguntar se deseja finalizar a votação depois do voto. Caso o número do voto não corresponda a nenhum candidato ou seja branco, ele deve ser tratado como nulo. Se for inserido um texto ao invés de número, o código deve retornar uma mensagem para votar novamente.
+
+Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele com o maior número de votos e, também, a quantidade de votos de cada candidato, os brancos e nulos 
+
+--------------------------------************RESPOSTA********************----------------------------------------
+
+
+let prompt = require('prompt-sync')();
+
+let nuloVotos = 0;
+let chicoVotos = 0;
+let severinaVotos = 0;
+let bioVotos = 0;
+let brancoVotos = 0;
+let fim = 'n';
+let check = 0;
+let totalVotos;
+let voto;
+
+function ComputaVoto(x) {
+
+    switch (x) {
+
+        case 889:
+            chicoVotos = chicoVotos + 1;
+            break;
+
+        case 847:
+            severinaVotos = severinaVotos + 1;
+            break;
+
+        case 515:
+            bioVotos = bioVotos + 1;
+            break;
+
+        case 0:
+            brancoVotos = brancoVotos + 1;
+            break;
+
+        default:
+            nuloVotos = nuloVotos + 1;
+
+    }
+}
+
+
+const candidatos = {
+    Chico: 889,
+    Severina: 847,
+    Bio: 515,
+    Branco: 0
+}
+
+while (fim === 'n') {
+    while (check === 0) {
+        console.log('\n 889 - Para votar em Chico \n 847 - Para votar em Severina \n 515 - Para votar em Chico \n 0   - Para votar em Branco')
+        voto = parseInt(prompt("Digite seu voto: "));
+        if (isNaN(voto)) {
+            check = 0;
+            console.log("Digite apenas números!!")
+        } else {
+            check = 1;
+        }
+    }
+
+    ComputaVoto(voto)
+    console.log('-------------------------------------------------------------------------')
+    fim = prompt("Deseja finalizar a votação? Responda 's' para sim e 'n' para não: ")
+    if (fim === 'n') {
+        check = 0;
+    }
+}
+totalVotos = chicoVotos + severinaVotos + bioVotos + nuloVotos + brancoVotos;
+if (chicoVotos > severinaVotos && chicoVotos > bioVotos){
+    console.log(`O candidato vencedor foi Chico com ${chicoVotos} votos.`)
+} else if (severinaVotos > chicoVotos && severinaVotos > bioVotos){
+    console.log(`O candidato vencedor foi Severina com ${severinaVotos} votos.`)
+} else if (bioVotos > chicoVotos && bioVotos > severinaVotos){
+    console.log(`O candidato vencedor foi Bio com ${bioVotos} votos.`)
+}
+
+console.log(``)
+console.log(`No total tivemos ${totalVotos} pessoas votando!`)
+console.log(``)
+console.log(`O candidato Chico teve: ${chicoVotos}`)
+console.log(`O candidato Severina teve: ${severinaVotos}`)
+console.log(`O candidato Bio teve: ${bioVotos}`)
+console.log(`Tivemos também ${brancoVotos} votos em branco e ${nuloVotos} votos nulo!`)

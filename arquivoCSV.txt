@@ -1,0 +1,45 @@
+Desenvolva um programa que deve ler um arquivo csv intitulado “notas_alunos.csv”. O arquivo deve ter a seguinte estrutura:
+
+aluno: Nome do aluno;
+nota_1: Primeira nota;
+nota_2: Segunda nota;
+faltas: Número de faltas;
+
+O programa lerá esse arquivo e criará duas colunas. A primeira coluna será “media”, que terá a média das duas notas do aluno. A segunda será “situacao”, com os valores: APROVADO ou REPROVADO.
+
+O aluno que tiver mais de 5 faltas ou possuir média menor que sete, será reprovado. O programa deverá salvar esse novo dataframe com o nome “alunos_situacao.csv”.
+
+
+-------------resposta-------------------------
+
+
+from statistics import median
+import pandas as pd
+
+## Lendo o arquivo CSV
+tabela = pd.read_csv("notas_alunos.csv", sep=",")
+print(tabela,'\n')
+
+## Criando as duas novas colunas com "Média" e "Situação"
+tabela["Média"] = (tabela["Nota_1"] + tabela["Nota_2"]) / 2
+tabela["Situação"] = "Pendente"
+
+## Alterando os valores da tabela "Situação"
+tabela.loc[(tabela["Média"] < 7) | (tabela["Faltas"] > 5), "Situação"] = "Reprovado"
+tabela.loc[(tabela["Média"] >= 7) & (tabela["Faltas"] <= 5), "Situação"] = "Aprovado"
+
+## Gerando um novo arquivo CSV com os dados atualizados
+tabela.to_csv("alunos_situacao.csv") 
+print(tabela)
+
+## Imprimindo o maior número de faltas da tabela
+maiorFalta = tabela["Faltas"].max()
+print('\nO maior número de faltas: ' +str(maiorFalta))
+
+## Imprimindo a maior média da tabela
+maiorMedia = tabela["Média"].max()
+print('\nA maior média: ' + str(maiorMedia))
+
+## Imprimindo a média dos valores da tabela "Média"
+mediaGeral = tabela["Média"].median()
+print('\nA média geral: ' + str(mediaGeral))

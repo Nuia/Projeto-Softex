@@ -1,0 +1,48 @@
+Crie um tipo abstrato de dado (TAD) para manipular números complexos na linguagem Python.
+O método deve:
+
+- calcular três números complexos;
+- realizar todas as operações básicas;
+- e imprimir as propriedades real e img do números. 
+
+------------------------***********Resposta************************-------------------------------------
+
+class ComplexNumbers:
+  @classmethod             #Permite chamar a classe sem instanciar
+  def Create(self, a, b):
+    x = a
+    y = b
+    return complex(x, y)
+
+  def Show(a):
+    x = a
+    print('A combinação',x,'é do tipo',type(x))
+    print('O valor',x.real,'é a parte Real')
+    print('O valor',x.imag,'é a parte Imaginária\n')
+    
+
+  def Sum(a, b, c):
+    print('A soma dos valores',a,'+',b,'+',c,'=', a + b + c,'\n')
+
+  def Sub(a, b, c):
+    print('A subtração dos valores',a,'-',b,'-',c,'=', a - b - c,'\n')
+
+  def Mult(a, b, c):
+    print('A Múltiplicação dos valores',a,'x',b,'x',c,'=', a * b * c,'\n')
+
+  def Div(a, b, c):
+    print('A Divisão dos valores',a,'÷',b,'÷',c,'=', a / b / c,'\n')
+  
+    
+first = ComplexNumbers.Create(7,3)           #Vai chamar o método 'Create' e criar o número complexo
+second = ComplexNumbers.Create(3,4)          #Vai chamar o método 'Create' e criar o número complexo
+third = ComplexNumbers.Create(5,2)           #Vai chamar o método 'Create' e criar o número complexo
+
+ComplexNumbers.Show(first)                   #Vai chamar o método 'Show' e imprimir o tipo, o valor real e o valor imaginário
+ComplexNumbers.Show(second)                  #Vai chamar o método 'Show' e imprimir o tipo, o valor real e o valor imaginário
+ComplexNumbers.Show(third)                   #Vai chamar o método 'Show' e imprimir o tipo, o valor real e o valor imaginário
+
+ComplexNumbers.Sum(first, second, third)     #Vai chamar o método 'Sum' e mostrar a soma dos 3 números complexos
+ComplexNumbers.Sub(first, second, third)     #Vai chamar o método 'Sub' e mostrar a subtração dos 3 números complexos
+ComplexNumbers.Mult(first, second, third)    #Vai chamar o método 'Mult' e mostrar a múltiplicação dos 3 números complexos
+ComplexNumbers.Div(first, second, third)     #Vai chamar o método 'Div' e mostrar a divisão dos 3 números complexos

@@ -1,0 +1,127 @@
+Classifique dois objetos materiais e dois abstratos. Insira, no mínimo, três métodos e três atributos para cada.
+
+-----------------------**************Resposta**************----------------------------------------
+class Porta {
+    constructor(modelo, peso, altura, largura, cor, aberta = false, fechadura = false){
+        this.modelo = modelo;
+        this.peso = peso;
+        this.altura = altura;
+        this.largura = largura;
+        this.cor = cor;
+        this.aberta = aberta;
+        this.fechadura = fechadura;
+    }
+
+    abrir() {
+        if (this.fechadura === true && this.aberta === false) {
+            this.aberta = true;
+        }else {
+            destrancar()
+            abrir()
+        }
+    }
+
+    fechar() {
+        if (this.fechadura === true && this.aberta === true) {
+            this.aberta = false;
+            trancar()
+        }else {
+            destrancar()
+            fechar()
+        }
+    }
+
+    trancar() {
+        this.fechadura = false;
+    }
+
+    destrancar() {
+        this.fechadura = true;
+    }
+}
+
+// Por padrão andar = 0 que seria o terreo e portas estarão fechadas (false)
+class Elevador {
+    constructor (modelo, altura, largura, peso, qtdMaxPessoas = 6, qtdMaxCarga = 6000, andar = 0, portas = false) {
+        this.modelo = modelo;
+        this.altura = altura;
+        this.largura = largura;
+        this.peso = peso;
+        this.qtdMaxPessoas = qtdMaxPessoas;
+        this.qtdMaxCarga = qtdMaxCarga;
+        this.andar = andar;
+        this.portas = portas;
+    }
+
+    abrirPortas() {
+        this.portas = true;
+    }
+
+    fecharPortas() {
+        this.portas = false;
+    }
+
+    mudarDeAndar(valor) {
+        this.andar = valor;
+    }
+}
+
+class ContaBancaria {
+    constructor (nome, cpf, agencia, numeroConta, saldo) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.agencia = agencia;
+        this.numeroConta = numeroConta;
+        this.saldo = saldo;
+    }
+
+    depositar(valor) {
+        this.saldo += valor;
+    }
+
+    sacar(valor) {
+        this.saldo -= valor;
+    }
+
+    transferir(valor, outraConta) {
+        this.saldo -= valor;
+        outraConta.saldo += valor;
+    }
+}
+
+class Jogador {
+    constructor(nome, level, raca, forca, habilidade, resistencia, armadura, poderDeFogo, pontosDeVida, pontosDeMana, experiencia) {
+        this.nome = nome;
+        this.level = level;
+        this.raca = raca;
+        this.forca = forca;
+        this.habilidade = habilidade;
+        this.resistencia = resistencia;
+        this.armadura = armadura;
+        this.poderDeFogo = poderDeFogo;
+        this.pontosDeVida = pontosDeVida;
+        this.pontosDeMana = pontosDeMana;
+        this.experiencia = experiencia;
+    }
+
+    atacar() {
+        return this.forca + this.habilidade + dado()
+    }
+
+    defender() {
+        return this.armadura + this.habilidade + dado()
+    }
+
+    testeDeHabilidade() {
+        let retorno = dado()
+        if (retorno > this.habilidade) {
+            return `Falhou no teste de habilidade!`;
+        }else {
+            return `Passou no teste de habilidade!`;
+        }
+    }
+        
+    dado() {
+        return Math.floor((Math.random() * 6 + 1))
+    }
+}

@@ -1,0 +1,45 @@
+Crie uma classe de sua preferência com, no mínimo, uma variável, um método e um incremento. Depois, desenvolva três ou mais objetos para testar o código.
+
+
+
+-----------------------------************Resposta******************----------------------------------
+
+class Pessoa {
+    constructor (nome, peso, altura) {
+        this.nome = nome;
+        this.peso = peso;
+        this.altura = altura;
+    }
+
+    static totalPessoas = 0;
+    
+    registro() {
+        Pessoa.totalPessoas++;
+    }
+
+    mostrarRegistro() {
+        console.log(Pessoa.totalPessoas)
+    }
+}
+
+pessoa1 = new Pessoa('Italo', 75, 1.70);
+pessoa2 = new Pessoa('Lucas', 90, 1.85);
+pessoa3 = new Pessoa('Maria', 60, 1.65);
+
+console.log(pessoa1); 
+console.log(pessoa2);
+console.log(pessoa3);
+
+console.log('\nAntes de usar o método registro() nos objetos')
+console.log(`Total de pessoas: ${Pessoa.totalPessoas}`)
+
+pessoa1.registro() // Adiciona + 1 em 'totalPessoas'
+pessoa2.registro() // Adiciona + 1 em 'totalPessoas'
+pessoa3.registro() // Adiciona + 1 em 'totalPessoas'
+
+console.log('\nDepois de usar o método registro() nos objetos')
+console.log(`Total de pessoas: ${Pessoa.totalPessoas}`)
+
+pessoa1.mostrarRegistro() // Retorna 3
+pessoa2.mostrarRegistro() // Retorna 3
+pessoa3.mostrarRegistro() // Retorna 3

@@ -1,0 +1,55 @@
+Crie uma classe e insira nela, no mínimo, dois atributos, os quais devem ter um método acessor (get) e um método modificador (set) para cada. Defina um objeto para cada atributo e elabore um construtor para criar alguma regra.
+
+A atividade pode ser realizada em qualquer linguagem de programação ou apenas utilizando algoritmos.
+
+----------------------************Resposta***************---------------------------
+
+class Veiculo {
+    constructor (marca, modelo, cor, combustivel) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.combustivel = combustivel;
+    }
+
+    get getMarca() {
+        return this.marca;
+    }
+
+    get getModelo() {
+        return this.modelo;
+    }
+
+    get getCor() {
+        return this.cor;
+    }
+
+    set setCor(cor) {
+        this.cor = cor;
+    }
+
+    get getCombustivel() {
+        return this.combustivel;
+    }
+
+    set setCombustivel(tipo) {
+        this.combustivel = tipo;
+    }
+
+    showDetails() {
+        console.log(`--- Características do veículo ---\nMarca: ${this.getMarca}\nModelo: ${this.getModelo}\nCor: ${this.getCor}\nTipo de combustível: ${this.getCombustivel}\n`);
+    }
+}
+
+veiculo1 = new Veiculo('Volkswagen', 'Saveiro 2.0', 'Prata', 'Diesel');
+veiculo2 = new Veiculo('Fiat', 'Uno Mille', 'Vermelho', 'Gasolina');
+
+veiculo1.showDetails()
+veiculo1.setCor = 'Azul';
+veiculo1.setCombustivel = 'Gasolina';
+veiculo1.showDetails()
+
+veiculo2.showDetails()
+veiculo2.setCor = 'Amarelo';
+veiculo2.setCombustivel = 'Alcool';
+veiculo2.showDetails()
